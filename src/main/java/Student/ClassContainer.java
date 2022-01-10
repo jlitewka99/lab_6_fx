@@ -85,7 +85,7 @@ public class ClassContainer {
     }
 
 
-    private void infill() {
+    public void infill() {
         Student student0 = new Student("ZZZ", "ZZZ", StudentCondition.ODRABIAJĄCY, "1999", 1.1, "Pawlo");
         Student student1 = new Student("Pawel", "Kowalski", StudentCondition.CHORY, "1999", 1.1, "Pawlo");
         Student student6 = new Student("Pawel", "Kowalski", StudentCondition.NIEOBECNY, "1999", 1.1, "Pawlo");

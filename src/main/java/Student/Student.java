@@ -1,6 +1,8 @@
 package Student;
 
-public class Student implements Comparable<Student>{
+import java.io.Serializable;
+
+public class Student implements Comparable<Student>, Serializable {
     private String imie;
     private String nazwisko;
     private StudentCondition stanStudenta;

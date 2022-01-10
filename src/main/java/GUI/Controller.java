@@ -25,7 +25,6 @@ public class Controller implements Initializable {
     ClassContainer classContainer = new ClassContainer();
 
 
-
     @FXML
     private ComboBox<StudentCondition> cmbBox;
 
@@ -37,7 +36,6 @@ public class Controller implements Initializable {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
-
 
 
     @FXML
@@ -98,15 +96,11 @@ public class Controller implements Initializable {
     }
 
 
-
     private void loadTableData() {
 
         listOfClasses = FXCollections.observableArrayList(classContainer.getListaGrup());
 
-
-
         table_1.setItems(listOfClasses);
-
 
         table_1.setOnMouseClicked(e -> {
                     events();
@@ -119,14 +113,15 @@ public class Controller implements Initializable {
     }
 
     private void events() {
-       Class a =  table_1.getSelectionModel().getSelectedItem();
-       if (a != null) {
-           System.out.println(a);
-           listOfStudents = FXCollections.observableArrayList(a.getListaStudentow());
-           table_2.setItems(listOfStudents);
-       }
+        Class a = table_1.getSelectionModel().getSelectedItem();
+        if (a != null) {
+            System.out.println(a);
+            listOfStudents = FXCollections.observableArrayList(a.getListaStudentow());
+            table_2.setItems(listOfStudents);
+        }
     }
-    private void eventsTable2(){
+
+    private void eventsTable2() {
         Student a = table_2.getSelectionModel().getSelectedItem();
         if (a != null) {
 //            cmbBox.set

@@ -1,11 +1,26 @@
 package Student;
+import Database.Column;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.io.Serializable;
 import java.util.*;
 
+@Data
+@AllArgsConstructor
+public class Class implements Serializable {
 
-public class Class {
+    /*
+    private String className;
+    private List<Grade> grades;
+    private double points;
+    @Column(name = "status", order = 2)
+     */
+    @Column(name = "classNameAnn", order = 1)
     private String nazwaGrupy;
     private List<Student> listaStudentow = new ArrayList<>();
     private Integer maksymalnaIloscStudentow;
+    @Column(name = "pointsAnn", order = 3)
     private Integer iloscStudentow = 0;
 
     public String getNazwaGrupy() {
@@ -159,11 +174,7 @@ public class Class {
 
     @Override
     public String toString() {
-        return "Class{" +
-                "nazwaGrupy='" + nazwaGrupy + '\'' +
-                ", listaStudentow=" + listaStudentow +
-                ", maksymalnaIloscStudentow=" + maksymalnaIloscStudentow +
-                '}';
+        return nazwaGrupy + ';' +listaStudentow+ ';' +maksymalnaIloscStudentow ;
     }
 
     public void setNazwaGrupy(String nazwaGrupy) {
